@@ -17,7 +17,8 @@ const out_file_name = path.join(out_dir, `resume.pdf`);
   // 比如 Mac 下的路径通常是: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
   const browser = await puppeteer.launch({
     headless: true, // 新版无头模式
-    channel: 'chrome', // 让 puppeteer 尝试使用系统自带的 Chrome
+    // 在 CI/CD 中，我们通常不强制指定 channel，让 puppeteer 使用它下载的浏览器
+    // channel: 'chrome', 
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 

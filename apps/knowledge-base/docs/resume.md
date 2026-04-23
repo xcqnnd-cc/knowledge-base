@@ -4,6 +4,19 @@ title: 👨‍💻 个人简历
 sidebar_position: 1
 ---
 
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+<div className="resume-download-bar" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+  <a 
+    href="/knowledge-base/resume/resume.pdf" 
+    target="_blank" 
+    className="button button--primary"
+  >
+    📄 查看 / 下载 PDF 版本简历
+  </a>
+</div>
+
 ### 冉军林 Web前端开发工程师 
 
 ---

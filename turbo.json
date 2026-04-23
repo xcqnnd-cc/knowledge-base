@@ -5,6 +5,12 @@
       "dependsOn": ["^build"],
       "outputs": ["build/**", "dist/**"]
     },
+    "build:html": {
+      "outputs": ["build/**", "dist/**"]
+    },
+    "build:md": {
+      "outputs": ["build/**", "dist/**"]
+    },
     "start": {
       "cache": false,
       "persistent": true

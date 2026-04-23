@@ -4,6 +4,8 @@
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "build": "turbo run build",
+    "build:html": "turbo run build:html",
+    "build:md": "turbo run build:md",
     "start": "turbo run start",
     "start:kb": "turbo run start --filter=codesun-knowledge-base",
     "start:resume": "turbo run start --filter=codesun-resume-builder"

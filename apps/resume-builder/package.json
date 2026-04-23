@@ -4,8 +4,9 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "npx serve .",
-    "build": "tsx sync-to-kb.ts && PUPPETEER_SKIP_DOWNLOAD=true tsx html2pdf.ts",
-    "build:md": "tsx sync-to-kb.ts && PUPPETEER_SKIP_DOWNLOAD=true tsx md2pdf.ts",
+    "build": "tsx sync-to-kb.ts && tsx html2pdf.ts",
+    "build:html": "tsx sync-to-kb.ts && tsx html2pdf.ts",
+    "build:md": "tsx sync-to-kb.ts && tsx md2pdf.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
