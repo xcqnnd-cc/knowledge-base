@@ -21,12 +21,12 @@ const config: Config = {
   url: 'https://lty88.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/codesun-knowledge-base/',
+  baseUrl: '/knowledge-base/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'lty88', // Usually your GitHub org/user name.
-  projectName: 'codesun-knowledge-base', // Usually your repo name.
+  projectName: 'knowledge-base', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/lty88/codesun-knowledge-base/tree/main/',
+            'https://github.com/lty88/knowledge-base/tree/main/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
@@ -60,7 +60,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/lty88/codesun-knowledge-base/tree/main/',
+            'https://github.com/lty88/knowledge-base/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -125,7 +125,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/lty88/codesun-knowledge-base',
+          href: 'https://github.com/lty88/knowledge-base',
           label: 'GitHub',
           position: 'right',
         },
@@ -169,7 +169,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/lty88/codesun-knowledge-base',
+              href: 'https://github.com/lty88/knowledge-base',
             },
           ],
         },
