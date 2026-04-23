@@ -1,0 +1,9 @@
+{
+  "label": "前端知识",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "/frontend",
+    "description": "前端开发相关知识，包括 Vue, React, TS 等。"
+  }
+}

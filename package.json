@@ -13,7 +13,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "optimize:images": "find static/img docs -name '*.png' -o -name '*.jpg' | xargs -I {} sh -c 'pngquant --quality=65-80 --ext .png --force {} && advpng -z4 {}'"
   },
   "packageManager": "pnpm@9.0.0",
   "dependencies": {

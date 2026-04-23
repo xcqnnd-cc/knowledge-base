@@ -18,14 +18,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://你的用户名.github.io',
+  url: 'https://lty88.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/codesun-knowledge-base/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: '你的用户名', // Usually your GitHub org/user name.
+  organizationName: 'lty88', // Usually your GitHub org/user name.
   projectName: 'codesun-knowledge-base', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/你的用户名/codesun-knowledge-base/tree/main/',
+            'https://github.com/lty88/codesun-knowledge-base/tree/main/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
@@ -60,7 +60,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/你的用户名/codesun-knowledge-base/tree/main/',
+            'https://github.com/lty88/codesun-knowledge-base/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -120,6 +120,10 @@ const config: Config = {
           label: '文档',
         },
         {to: '/blog', label: '博客', position: 'left'},
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
         {
           href: 'https://github.com/你的用户名/codesun-knowledge-base',
           label: 'GitHub',
