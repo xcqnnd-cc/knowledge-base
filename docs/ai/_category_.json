@@ -1,0 +1,9 @@
+{
+  "label": "AI 领域",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/ai",
+    "description": "人工智能相关知识，包括 Prompt Engineering, LLM 等。"
+  }
+}
