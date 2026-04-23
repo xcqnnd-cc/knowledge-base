@@ -1,23 +1,58 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * CSS Modules
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 8rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--ifm-color-primary-lightest) 0%, var(--ifm-hero-bg-color) 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+[data-theme='dark'] .heroBanner {
+  background: linear-gradient(135deg, #1e1e2f 0%, var(--ifm-hero-bg-color) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  /* 炫酷的渐变色文字 */
+  background: -webkit-linear-gradient(45deg, var(--ifm-color-primary), #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: var(--ifm-font-color-base);
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
+}
+
+.actionButton {
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all var(--ifm-transition-fast);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -5px rgba(99, 102, 241, 0.4), 0 8px 10px -6px rgba(99, 102, 241, 0.2);
 }

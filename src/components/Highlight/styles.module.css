@@ -1,0 +1,7 @@
+.highlight {
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  font-weight: bold;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
