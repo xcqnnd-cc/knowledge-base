@@ -121,6 +121,11 @@ const config: Config = {
         },
         {to: '/blog', label: '博客', position: 'left'},
         {
+          href: 'https://lty88.github.io/resume/',
+          label: '简历',
+          position: 'left',
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
         },
@@ -166,6 +171,10 @@ const config: Config = {
             {
               label: '博客',
               to: '/blog',
+            },
+            {
+              label: '简历',
+              href: 'https://lty88.github.io/resume/',
             },
             {
               label: 'GitHub',

@@ -28,6 +28,11 @@ function HomepageHeader() {
             to="/blog">
             阅读近期博客 📖
           </Link>
+          <Link
+            className={clsx('button button--outline button--secondary button--lg', styles.actionButton)}
+            to="https://lty88.github.io/resume/">
+            关于我 (简历) 👨‍💻
+          </Link>
         </div>
       </div>
     </header>
