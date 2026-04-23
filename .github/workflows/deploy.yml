@@ -23,8 +23,20 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # 安装 puppeteer 依赖 (如果需要生成 PDF)
+      - run: sudo apt-get update && sudo apt-get install -y libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2
+      - run: npx puppeteer browsers install chrome
       - run: pnpm run build
+      - name: Merge Resume into Knowledge Base
+        run: |
+          mkdir -p apps/knowledge-base/build/resume
+          # 拷贝 HTML
+          cp apps/resume-builder/index.html apps/knowledge-base/build/resume/
+          # 拷贝生成的 PDF
+          if [ -d "apps/resume-builder/build" ]; then
+            cp -r apps/resume-builder/build/* apps/knowledge-base/build/resume/
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: apps/knowledge-base/build
       - uses: actions/deploy-pages@v4

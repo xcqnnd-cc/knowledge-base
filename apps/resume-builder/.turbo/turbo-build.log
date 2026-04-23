@@ -1,0 +1,21 @@
+
+
+> codesun-resume-builder@1.0.0 build /Users/codesun/codesun-knowledge-base/apps/resume-builder
+> tsx sync-to-kb.ts && tsx html2pdf.ts
+
+✅ 简历 Markdown 已成功同步到知识库: /Users/codesun/codesun-knowledge-base/apps/knowledge-base/docs/resume.md
+/Users/codesun/codesun-knowledge-base/node_modules/.pnpm/puppeteer-core@24.42.0/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:543
+          throw new Error(
+                ^
+
+Error: Could not find Chrome (ver. 147.0.7727.57). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /Users/codesun/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.
+    at ChromeLauncher.resolveExecutablePath (/Users/codesun/codesun-knowledge-base/node_modules/[4m.pnpm[24m/puppeteer-core@24.42.0/node_modules/[4mpuppeteer-core[24m/src/node/BrowserLauncher.ts:543:17)
+    at ChromeLauncher.computeLaunchArguments (/Users/codesun/codesun-knowledge-base/node_modules/[4m.pnpm[24m/puppeteer-core@24.42.0/node_modules/[4mpuppeteer-core[24m/src/node/ChromeLauncher.ts:131:16)
+    at async ChromeLauncher.launch (/Users/codesun/codesun-knowledge-base/node_modules/[4m.pnpm[24m/puppeteer-core@24.42.0/node_modules/[4mpuppeteer-core[24m/src/node/BrowserLauncher.ts:111:24)
+    at async <anonymous> [90m(/Users/codesun/codesun-knowledge-base/apps/resume-builder/[39mhtml2pdf.ts:16:19[90m)[39m
+
+Node.js v22.22.0
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

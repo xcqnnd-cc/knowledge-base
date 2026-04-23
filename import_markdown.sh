@@ -11,7 +11,7 @@
 # ./import_markdown.sh <源目录> <目标模块>
 # 示例：./import_markdown.sh ~/Downloads/my_notes frontend
 # ==============================================================================
-
+url: 'https://lty88.github.io',
 if [ "$#" -ne 2 ]; then
     echo "用法: $0 <源目录> <目标模块 (frontend|backend|ai)>"
     echo "示例: $0 ~/Downloads/vue_notes frontend"

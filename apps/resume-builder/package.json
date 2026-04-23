@@ -1,0 +1,24 @@
+{
+  "name": "codesun-resume-builder",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "tsx sync-to-kb.ts && tsx html2pdf.ts",
+    "build:md": "tsx sync-to-kb.ts && tsx md2pdf.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "marked": "^17.0.1",
+    "puppeteer": "^24.34.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.3"
+  }
+}

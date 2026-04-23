@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冉军林 - 高级前端工程师简历</title>
+    <style>
+        /* --- 全局重置 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            /* 专业的无衬线字体组合 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+            background-color: #525659; /* 浏览器预览深灰底 */
+            color: #333333;
+            line-height: 1.6;
+            font-size: 14px; /* 标准正文字号 */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- 简历容器 (A4规格) --- */
+        .resume-container {
+            width: 210mm;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 40px 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: relative;
+            min-height: 297mm; /* 保证至少一页 */
+        }
+
+        /* --- 链接样式 --- */
+        a {
+            color: #254e7b;
+            text-decoration: none;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* --- 模块通用样式 --- */
+        .section {
+            margin-bottom: 25px;
+            /* 允许模块内部跨页，防止大块空白 */
+            page-break-inside: auto; 
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            background-color: #f4f8fb;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid #254e7b;
+            /* 保证打印时标题跟内容不分离太远 */
+            page-break-after: avoid;
+        }
+
+        .section-number {
+            color: #254e7b;
+            font-size: 18px;
+            font-weight: 900;
+            margin-right: 12px;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        .section-content {
+            padding: 0 5px;
+        }
+
+        /* --- 01 个人信息 --- */
+        .personal-info {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .info-row.name-row {
+            margin-bottom: 10px;
+        }
+        .info-row.name-row .info-item {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000;
+        }
+        .job-tag {
+            background: #254e7b;
+            color: #fff;
+            font-size: 16px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 12px;
+            font-weight: normal;
+        }
+
+        .info-row {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        
+        .info-item:not(:last-child)::after {
+            content: "|";
+            margin: 0 12px;
+            color: #ccc;
+        }
+
+        /* --- 02 优势列表 --- */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #254e7b;
+            font-weight: bold;
+        }
+
+        .advantage-title {
+            font-weight: 700;
+            color: #000;
+            margin-right: 5px;
+        }
+
+        /* 重点强调 */
+        strong {
+            font-weight: 600;
+            color: #000;
+            background-color: rgba(37, 78, 123, 0.08);
+            padding: 0 4px;
+            border-radius: 2px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.95em;
+        }
+
+        /* --- 03 工作经历 --- */
+        .work-experience {
+            margin-bottom: 35px;
+            page-break-inside: auto; /* 允许跨页 */
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ccc;
+            page-break-after: avoid;
+        }
+        
+        .company-info {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+        }
+        
+        .company-info .role {
+            font-weight: normal;
+            font-size: 15px;
+            margin-left: 10px;
+            color: #444;
+            padding-left: 10px;
+            border-left: 2px solid #ccc;
+        }
+
+        .time-location {
+            font-size: 14px;
+            color: #666;
+            font-family: Consolas, sans-serif;
+            font-weight: 600;
+        }
+
+        /* 工作中的项目子块 */
+        .work-sub-project {
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+
+        .work-project-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #254e7b; /* 蓝色标题区分 */
+            margin-bottom: 6px;
+        }
+
+        .project-details li {
+            font-size: 14px;
+            margin-bottom: 4px;
+            line-height: 1.55;
+            color: #333;
+        }
+
+        /* 列表内的加粗标题 (如: 微前端集成：) */
+        .detail-title {
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* --- 04 项目经历 (详细版) --- */
+        .project-section-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            page-break-inside: avoid;
+        }
+        .project-section-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-head-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .project-main-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .project-main-title::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #254e7b;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        /* 标签文字 (项目描述/技术栈) */
+        .label-text {
+            font-weight: 700;
+            color: #444;
+            margin-right: 5px;
+        }
+
+        /* --- 打印适配 --- */
+        @media print {
+            body { background-color: #fff; }
+            .resume-container { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+            .section { page-break-inside: auto; }
+            .section-header, strong { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            /* 保证标题不留在页面底部 */
+            h1, h2, h3, .section-title, .experience-header { page-break-after: avoid; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-container">
+        
+        <!-- 01 个人信息 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div class="section-title">个人信息</div>
+            </div>
+            <div class="section-content">
+                <div class="personal-info">
+                    <div class="info-row name-row">
+                        <span class="info-item">冉军林 <span class="job-tag">web前端工程师</span></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-item">男</span>
+                        <span class="info-item">6年经验</span>
+                        <span class="info-item">155-2000-0125</span>
+                        <span class="info-item"><a href="mailto:98n9@163.com">98n9@163.com</a></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-item">重庆工业职业技术大学</span>
+                        <span class="info-item">计算机应用技术</span>
+                        <span class="info-item">专科</span>
+                        <span class="info-item">2016.09 - 2019.06</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 个人优势 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div class="section-title">个人优势</div>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>
+                        <span class="advantage-title">核心技术：</span>深耕 <strong>Vue 2/3</strong> 生态，深入理解响应式原理及 <strong>Virtual DOM</strong>；具备 <strong>React 18</strong> + Hooks 实战经验，能胜任多技术栈开发。
+                    </li>
+                    <li>
+                        <span class="advantage-title">全栈与数据治理：</span>具备 <strong>Node.js</strong> 数据处理能力，擅长设计 <strong>BFF</strong> 中间层，拥有<strong>百万级</strong>数据清洗、流式处理与格式化转发的实战经验。
+                    </li>
+                    <li>
+                        <span class="advantage-title">图形与可视化：</span>熟悉 <strong>SVG / Canvas</strong> 深度操作，擅长 <strong>ECharts / AntV / GIS 地图</strong> 开发，有复杂的工业级可视化交互经验。
+                    </li>
+                    <li>
+                        <span class="advantage-title">架构与工程化：</span>熟悉 <strong>微前端</strong> 架构与 <strong>Monorepo</strong> 管理；熟悉 <strong>Vite / Webpack</strong> 构建及 <strong>CI/CD 自动化部署</strong>；具备 SaaS 低代码引擎设计能力。
+                    </li>
+                    <li>
+                        <span class="advantage-title">多媒体与跨端：</span>拥有 <strong>HLS/WebRTC 音视频流媒体</strong> 对接及硬件云台控制经验；熟练开发 <strong>Taro / UniApp</strong> 跨端应用。
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 03 工作经历 (保留您的完整文本) -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div class="section-title">工作经历</div>
+            </div>
+            <div class="section-content">
+                
+                <!-- 工作 1 -->
+                <div class="work-experience">
+                    <div class="experience-header">
+                        <div class="company-info">重庆智网科技有限公司信息通信分公司（律宸）<span class="role">前端核心开发</span></div>
+                        <div class="time-location">2024.10 - 至今</div>
+                    </div>
+                    
+                    <div class="work-sub-project">
+                        <div class="work-project-title">PMS3.0 微前端与变电全景可视化</div>
+                        <ul class="project-details">
+                            <li><span class="detail-title">Node.js 中间层清洗与转发 (BFF)</span>：面对上游接口返回的<strong>百万级</strong>原始设备与干特图数据，搭建 Node.js 中间件服务。采用 <strong>Stream 流式处理</strong> 分批清洗脏数据，通过 <strong>Gzip 压缩</strong>与<strong>高吞吐接口</strong>转发给后端，解决了前端直接请求原始接口的性能瓶颈，将最终查询响应优化至 <strong>1s 内</strong>。</li>
+                            <li><span class="detail-title">微前端集成</span>：作为 PMS3.0 子应用接入，解决了 <strong>Qiankun</strong> 框架下的<strong>样式隔离</strong>与<strong>跨应用鉴权</strong>痛点。</li>
+                            <li><span class="detail-title">SVG 拓扑引擎</span>：基于 <strong>SVG.js</strong> 开发变电站单线图引擎，利用<strong>虚拟化渲染</strong>技术支撑 5000+ 节点的高性能交互（缩放/拖拽/停复电分析/历史 SVG 对比分析）。</li>
+                            <li><span class="detail-title">统一视频集成与组件封装</span>：负责对接国网“统一视频”平台 API，实现监控资源的标准化接入。基于统一视频进行二次封装，屏蔽了底层流媒体协议差异，对其他项目提供开箱即用的视频播放与云台控制组件，大幅降低了业务集成成本。</li>
+                        </ul>
+                    </div>
+
+                    <div class="work-sub-project">
+                        <div class="work-project-title">在线文档与知识库系统 (React 18)</div>
+                        <ul class="project-details">
+                            <li><span class="detail-title">协同编辑模块</span>：基于 <strong>React 18 + OnlyOffice</strong> 开发文档协作中心，实现了 Word/Excel 的在线预览、多人实时编辑及历史版本回溯。</li>
+                            <li><span class="detail-title">知识库管理</span>：设计基于 Ant Design 的知识库文件树系统，支持海量文件的<strong>断点续传</strong>与<strong>加密传输</strong>。使用 <strong>AntV X6</strong> 可视化展示文档审批流程，提升了国网内部知识流转效率。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 工作 2 -->
+                <div class="work-experience">
+                    <div class="experience-header">
+                        <div class="company-info">融盟科技（重庆）有限公司<span class="role">前端核心开发</span></div>
+                        <div class="time-location">2023.07 - 2024.10</div>
+                    </div>
+
+                    <div class="work-sub-project">
+                        <div class="work-project-title">SaaS 架构升级与工程化</div>
+                        <ul class="project-details">
+                            <li><span class="detail-title">架构重构</span>：主导将老旧项目迁移至 <strong>Vite + Vue3 + TypeScript</strong>，引入 <strong>Monorepo</strong> 管理多业务包，冷启动速度提升 <strong>10倍</strong>。</li>
+                            <li><span class="detail-title">CI/CD 流水线搭建</span>：从 0 到 1 搭建基于 <strong>GitLab CI/CD + Docker + Nginx</strong> 的自动化部署流程。实现代码提交后的自动 Lint 校验、构建打包与镜像发布，将测试环境部署耗时从 20 分钟缩短至 <strong>3 分钟</strong>。</li>
+                            <li><span class="detail-title">低代码引擎</span>：设计基于 <strong>JSON Schema</strong> 的动态表单方案。支持复杂校验与逻辑联动，配合 Element Plus 二次封装组件库，使新业务页面开发效率提升 <strong>60%</strong>。</li>
+                        </ul>
+                    </div>
+
+                    <div class="work-sub-project">
+                        <div class="work-project-title">金融与移动业务线 (DingMaster)</div>
+                        <ul class="project-details">
+                            <li><span class="detail-title">Taro 多端架构</span>：主导“叮师傅”等金融产品的多端重构，实现一套代码编译至 微信/H5/App 三端。通过<strong>分包加载</strong>策略将小程序主包体积控制在 1.5MB 以内。</li>
+                            <li><span class="detail-title">前端核心交互</span>：独立负责移动端核心业务开发，实现了复杂的<strong>金融表单录入</strong>、<strong>支付流程闭环</strong>以及用户权限体系的前端逻辑。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 工作 3 -->
+                <div class="work-experience">
+                    <div class="experience-header">
+                        <div class="company-info">成都烽顺科技有限公司<span class="role">前端开发</span></div>
+                        <div class="time-location">2019.12 - 2023.05</div>
+                    </div>
+
+                    <div class="work-sub-project">
+                        <div class="work-project-title">医疗 SaaS 业务线 (SaaS)</div>
+                        <ul class="project-details">
+                            <li><span class="detail-title">大数据表格</span>：针对耗材进销存场景下的 <strong>10w+ 行</strong>数据，引入 <strong>vxe-table</strong> 虚拟滚动方案，实现毫秒级筛选与排序。</li>
+                            <li><span class="detail-title">可视化打印</span>：基于 <strong>hiprint</strong> 封装拖拽式打印设计器，支持用户自定义模板，解决浏览器端复杂的单据打印难题。</li>
+                        </ul>
+                    </div>
+
+                    <div class="work-sub-project">
+                        <div class="work-project-title">高并发 C 端业务线 (High Concurrency)</div>
+                        <ul class="project-details">
+                            <li><span class="detail-title">性能优化</span>：在“高中学业查询平台”项目中，抗住<strong>百万级 PV</strong> 流量冲击。通过 CDN 加速、HTTP 缓存策略及移动端适配方案，确保了查分高峰期的系统稳定性。</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 04 项目经历 (完整保留) -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <div class="section-title">项目经历</div>
+            </div>
+            <div class="section-content">
+                
+                <!-- 项目 1 -->
+                <div class="project-section-item">
+                    <div class="project-main-title">项目一：变电站全景可视化与数据中台 (核心重点)</div>
+                    <ul>
+                        <li><span class="label-text">项目描述：</span>集成于国网 <strong>PMS3.0</strong> 的核心运检应用，包含电网一张图、变电站拓扑分析、视频全景监控及干特图施工管理。</li>
+                        <li><span class="label-text">技术栈：</span><strong>Vue3 + TypeScript + SVG.js + Node.js (Koa) + 微前端</strong></li>
+                        <li>
+                            <span class="label-text">核心难点：</span>
+                            <ul style="margin-top:4px;">
+                                <li><strong>海量数据 ETL</strong>：利用 Node.js Stream 流式处理技术，完成百万级异构数据的清洗与 List-to-Tree 结构组装，通过中间层压缩转发，大幅提升前端首屏速度。</li>
+                                <li><strong>SVG 极致性能</strong>：面对超大 SVG 拓扑图（5000+ 节点），采用<strong>事件委托</strong>与<strong>分层渲染</strong>策略，实现流畅的缩放、拖拽与告警动态着色。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 项目 2 -->
+                <div class="project-section-item">
+                    <div class="project-main-title">项目二：国网内部知识库与在线文档协作平台</div>
+                    <ul>
+                        <li><span class="label-text">项目描述：</span>面向国网内部的知识资产管理系统，提供海量文件的<strong>加密传输</strong>、知识沉淀分享及 <strong>OnlyOffice</strong> 在线协同编辑功能，解决内网环境下文档流转效率低的问题。</li>
+                        <li><span class="label-text">技术栈：</span><strong>React 18 + TypeScript + Ant Design 5 + OnlyOffice + AntV X6</strong></li>
+                        <li>
+                            <span class="label-text">核心贡献：</span>
+                            <ul style="margin-top:4px;">
+                                <li><strong>文档协同集成</strong>：深度集成 OnlyOffice 中间件，通过 JWT 鉴权与 Callback 回调机制，实现了 Office 文档的<strong>在线编辑</strong>、<strong>实时保存</strong>与<strong>多人协作</strong>，保障了内网数据的安全性。</li>
+                                <li><strong>大文件传输</strong>：针对知识库中常见的视频与图纸大文件，封装通用的<strong>切片上传</strong>与<strong>断点续传</strong>组件，支持并发控制与错误重试。</li>
+                                <li><strong>工作流可视化</strong>：使用 <strong>AntV X6</strong> 开发审批流程查看器，将复杂的文档归档、发布审批流程以 DAG 图形式可视化展示，支持节点状态高亮与进度追踪。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 项目 3 -->
+                <div class="project-section-item">
+                    <div class="project-main-title">项目三：叮师傅云雀平台 - 数智金融 SaaS</div>
+                    <ul>
+                        <li><span class="label-text">技术栈：</span><strong>Vue3 + Taro + Element-Plus + Vite</strong></li>
+                        <li><span class="label-text">核心贡献：</span>设计 <strong>Schema Form</strong> 配置化表单方案，解决业务字段变更频繁痛点；使用 Taro 实现跨端复用，降低维护成本 40%。</li>
+                    </ul>
+                </div>
+
+                <!-- 项目 4 -->
+                <div class="project-section-item">
+                    <div class="project-main-title">项目四：环境污染防治全维感知系统</div>
+                    <ul>
+                        <li><span class="label-text">技术栈：</span><strong>React 18 + Hooks + Ant Design + Redux + ECharts</strong></li>
+                        <li><span class="label-text">核心贡献：</span>使用 <strong>useMemo</strong> 重构地图组件，解决高频数据更新下的渲染卡顿；结合 WebSocket 实现实时告警弹窗。</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
