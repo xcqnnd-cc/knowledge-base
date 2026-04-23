@@ -115,13 +115,13 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
           label: '文档',
         },
         {to: '/blog', label: '博客', position: 'left'},
         {
-          href: 'https://lty88.github.io/resume/',
+          to: '/docs/resume',
           label: '简历',
           position: 'left',
         },
@@ -174,7 +174,7 @@ const config: Config = {
             },
             {
               label: '简历',
-              href: 'https://lty88.github.io/resume/',
+              to: '/docs/resume',
             },
             {
               label: 'GitHub',

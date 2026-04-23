@@ -13,8 +13,11 @@ const out_file_name = path.join(out_dir, `resume.pdf`);
 
 (async () => {
   // 1. 启动浏览器
+  // 注意：在本地如果你有现成的 Chrome，可以指定 executablePath 绕过下载
+  // 比如 Mac 下的路径通常是: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
   const browser = await puppeteer.launch({
     headless: true, // 新版无头模式
+    channel: 'chrome', // 让 puppeteer 尝试使用系统自带的 Chrome
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 

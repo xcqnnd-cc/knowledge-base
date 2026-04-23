@@ -56,6 +56,7 @@ import { marked } from "marked";
   // 启动 Puppeteer
   const browser = await puppeteer.launch({
     headless: true,
+    channel: 'chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   const page = await browser.newPage();
