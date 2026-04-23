@@ -125,7 +125,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/你的用户名/codesun-knowledge-base',
+          href: 'https://github.com/lty88/codesun-knowledge-base',
           label: 'GitHub',
           position: 'right',
         },
@@ -169,7 +169,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/你的用户名/codesun-knowledge-base',
+              href: 'https://github.com/lty88/codesun-knowledge-base',
             },
           ],
         },
