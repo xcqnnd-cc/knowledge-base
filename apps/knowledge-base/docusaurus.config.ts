@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/lty88/knowledge-base/tree/main/',
+            'https://github.com/lty88/knowledge-base/edit/main/apps/knowledge-base/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
@@ -60,7 +60,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/lty88/knowledge-base/tree/main/',
+            'https://github.com/lty88/knowledge-base/edit/main/apps/knowledge-base/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
